@@ -1,2 +1,6 @@
-# my_app_backend
-A Backend server for my app
+# gym_tracker_backend
+My backend server for my app
+
+I use express js for my backend server.
+
+DEBUG=myapp:* npm start --> to run the server
