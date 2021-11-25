@@ -1,6 +1,9 @@
 var express = require('express');
 var router = express.Router();
 
+let exercises =  [{"exercises":"Lat Pull Down"},{"exercises":"RDL"},{"exercises":"Squat"},{"exercises":"Pull Up"},{"exercises":"Bench Incline"}]
+
+
 /* GET home page. */
 router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
