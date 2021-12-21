@@ -5,7 +5,7 @@ var connection = require('../database/database.js');
 
 
 // insert a new record
-router.post('/addExercise', function(req, res, next) {
+router.post('/addTips', function(req, res, next) {
   console.log(req.body)
   let sql = `REPLACE INTO MY_App.exercises (name, yt_link, details) VALUES (?)`;
 
@@ -24,12 +24,13 @@ router.post('/addExercise', function(req, res, next) {
 });
 
 // get all the tips
-router.post('/getExerciseList', function(req, res, next) {
+router.post('/getTipsList', function(req, res, next) {
   console.log(req.body)
   let sql = `SELECT * FROM My_App.exercises`;
   
   connection.query(sql, function(err, data, fields) {
     if (err) throw err;
+    console.log(data)
     res.send(data);
   })
     

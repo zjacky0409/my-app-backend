@@ -33,10 +33,14 @@ router.post('/getExercises', function (req, res) {
    res.send(exercises);
    })
 
-router.post('/testingAgain', function (req, res) {
- console.log("Someone send a post request to me by post")
- res.send({"exercises":"Testing Done"});
- })
+
+
+
+
+
+
+
+
 
 router.post('/addEvent', function (req, res) {
  console.log(req.body)

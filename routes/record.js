@@ -6,7 +6,8 @@ var connection = require('../database/database.js');
 
 // insert a new record
 router.post('/addRecord', function(req, res, next) {
-  console.log(req.body)
+
+  // should be diff
   let sql = `REPLACE INTO MY_App.exercises (name, yt_link, details) VALUES (?)`;
 
   let values = [
@@ -23,7 +24,7 @@ router.post('/addRecord', function(req, res, next) {
     
 });
 
-// get all the tips
+// get all the record
 router.post('/getRecordList', function(req, res, next) {
   console.log(req.body)
   let sql = `SELECT * FROM My_App.exercises`;
@@ -35,7 +36,7 @@ router.post('/getRecordList', function(req, res, next) {
     
 });
 
-// del the tips 
+// del the record 
 router.post('/deleteRecord', function(req, res, next) {
   console.log(req.body.name)
   let sql = `DELETE FROM My_App.exercises WHERE name="${req.body.name}";`;
