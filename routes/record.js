@@ -7,13 +7,18 @@ var connection = require('../database/database.js');
 // insert a new record
 router.post('/addRecord', function(req, res, next) {
 
-  // should be diff
-  let sql = `REPLACE INTO MY_App.exercises (name, yt_link, details) VALUES (?)`;
+  let sql = `REPLACE INTO MY_App.record VALUES (?)`;
+
 
   let values = [
+    req.body.date,
     req.body.name,
-    req.body.yt_link,
-    req.body.details,
+    req.body.set,
+    req.body.weight,
+    req.body.rest_time,
+    req.body.rpe,
+    req.body.rir,
+    req.body.remark
   ];
   
 
