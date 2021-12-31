@@ -31,8 +31,8 @@ router.post('/addRecord', function(req, res, next) {
 
 // get all the record
 router.post('/getRecordList', function(req, res, next) {
-  console.log(req.body)
-  let sql = `SELECT * FROM My_App.exercises`;
+  console.log(req.body.date)
+  let sql = "SELECT * FROM My_App.record  WHERE (`date` = '"  + req.body.date+  "')";
   
   connection.query(sql, function(err, data, fields) {
     if (err) throw err;
@@ -44,11 +44,26 @@ router.post('/getRecordList', function(req, res, next) {
 // del the record 
 router.post('/deleteRecord', function(req, res, next) {
   console.log(req.body.name)
-  let sql = `DELETE FROM My_App.exercises WHERE name="${req.body.name}";`;
+  console.log(req.body.date)
+  let sql = `DELETE FROM My_App.record WHERE (name="${req.body.name}") and (date="${req.body.date}");`;
+
+  console.log(sql)
   
   connection.query(sql, function(err, data, fields) {
     if (err) throw err;
     res.send({'Success':true});
+  })
+    
+});
+
+// get all the record
+router.post('/getSingleRecord', function(req, res, next) {
+  console.log(req.body.date)
+  let sql = `SELECT * FROM My_App.record WHERE (name="${req.body.name}") and (date="${req.body.date}");`
+  console.log(sql)
+  connection.query(sql, function(err, data, fields) {
+    if (err) throw err;
+    res.send(data[0]);
   })
     
 });
