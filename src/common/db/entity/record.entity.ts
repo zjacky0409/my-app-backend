@@ -34,12 +34,12 @@ export class Record {
   @Column()
   rpe: string;
 
-  @Column()
+  @Column() 
   rir: string;
 
   @Column()
   remark: string;
 
-  @ManyToOne(() => Exercise, exercise => exercise.record)
+  @ManyToOne(() => Exercise, exercise => exercise.record, { nullable: false })
   exercise: Exercise;
 }

@@ -4,7 +4,6 @@ import { Exercise } from 'src/common/db/entity/exercise.entity';
 import { Record } from 'src/common/db/entity/record.entity';
 import { Repository } from 'typeorm';
 import { CreateRecordDto } from './dto/create-record.dto';
-import { UpdateRecordDto } from './dto/update-record.dto';
 
 @Injectable()
 export class RecordService {
@@ -45,8 +44,6 @@ export class RecordService {
     } else {
       return { 'Success': false };
     }
-
-
   }
 
   async findAll(date: string) {
