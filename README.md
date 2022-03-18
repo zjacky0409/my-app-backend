@@ -3,4 +3,7 @@ My backend server for my app(Github Link: https://github.com/zjacky0409/gym_trac
 
 I use express js for my backend server.
 
+18/3 I use nestjs for my backend server
+
+
 DEBUG=myapp:* npm start --> to run the server
